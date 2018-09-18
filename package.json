@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "scripts": {
+    "build:server": "lerna run build --scope={@b2bconnect/common,@b2bconnect/server}",
+    "build:web": "lerna run build --scope={@b2bconnect/common,@b2bconnect/web}"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/rimraf",
+      "**/rimraf/**"
+    ]
+  },
+  "devDependencies": {
+    "lerna": "^2.11.0"
+  }
+}

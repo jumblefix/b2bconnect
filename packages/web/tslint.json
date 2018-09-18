@@ -1,0 +1,9 @@
+{
+  "extends": ["../../tslint.json"],
+  "rules": {
+    // tslint-react
+    "object-curly-spacing": true,
+    "import-spacing": true,
+    "no-boolean-literal-compare": false
+  }
+}
