@@ -2,7 +2,9 @@
   "private": true,
   "scripts": {
     "build:server": "lerna run build --scope={@b2bconnect/common,@b2bconnect/server}",
-    "build:web": "lerna run build --scope={@b2bconnect/common,@b2bconnect/web}"
+    "build:web": "lerna run build --scope={@b2bconnect/common,@b2bconnect/web}",
+    "start:docker": "lerna run start:docker",
+    "test": "lerna run test"
   },
   "workspaces": {
     "packages": [

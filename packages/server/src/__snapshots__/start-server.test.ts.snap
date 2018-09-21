@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`start-server confirm 1`] = `
+Object {
+  "message": "invalid or expired register token",
+}
+`;
+
+exports[`start-server reset 1`] = `
+Object {
+  "message": "invalid or expired reset token",
+}
+`;
+
+exports[`start-server should start 1`] = `
+Object {
+  "message": "pong",
+}
+`;

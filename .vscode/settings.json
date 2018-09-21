@@ -45,7 +45,8 @@
     "rspace",
     "slugify",
     "typeorm",
-    "varchar"
+    "varchar",
+    "precommit"
   ],
   "editor.emptySelectionClipboard": false
 }

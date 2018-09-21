@@ -1,0 +1,546 @@
+0 silly input [ 'test' ]
+1 silly flags { _: [ 'run' ],
+1 silly flags   'reject-cycles': false,
+1 silly flags   rejectCycles: false,
+1 silly flags   script: 'test',
+1 silly flags   args: [] }
+2 verbose rootPath /Users/dhaya/work/dhayaec/b2bconnect
+3 info version 2.11.0
+4 silly existsSync /Users/dhaya/work/dhayaec/b2bconnect/VERSION
+5 silly initialize attempt
+6 silly initialize success
+7 silly execute attempt
+8 silly runScriptInDir test [] components
+9 silly getExecOpts { cwd: '/Users/dhaya/work/dhayaec/b2bconnect/packages/components' }
+10 silly runScriptInDir test [] server
+11 silly getExecOpts { cwd: '/Users/dhaya/work/dhayaec/b2bconnect/packages/server' }
+12 silly runScriptInDir test [] web
+13 silly getExecOpts { cwd: '/Users/dhaya/work/dhayaec/b2bconnect/packages/web' }
+14 error test Errored while running script in '@b2bconnect/server'
+15 error execute callback with error
+16 error Error: Command failed: npm run test
+16 error FAIL src/modules/cart/cartResolver.test.ts
+16 error   ● Test suite failed to run
+16 error
+16 error     TypeError: Cannot read property 'close' of undefined
+16 error
+16 error       19 |
+16 error       20 | afterAll(async () => {
+16 error     > 21 |   connection.close();
+16 error          |              ^
+16 error       22 | });
+16 error       23 |
+16 error       24 | const getCartEmpty = {
+16 error
+16 error       at Object.<anonymous> (src/modules/cart/cartResolver.test.ts:21:14)
+16 error       at src/modules/cart/cartResolver.test.ts:26:71
+16 error       at Object.<anonymous>.__awaiter (src/modules/cart/cartResolver.test.ts:6:12)
+16 error       at Object.<anonymous>.afterAll (src/modules/cart/cartResolver.test.ts:20:21)
+16 error
+16 error FAIL src/modules/user/account-services.test.ts
+16 error   ● Test suite failed to run
+16 error
+16 error     TypeError: Cannot read property 'close' of undefined
+16 error
+16 error       19 |
+16 error       20 | afterAll(async () => {
+16 error     > 21 |   connection.close();
+16 error          |              ^
+16 error       22 | });
+16 error       23 |
+16 error       24 | const resendVerifySignup = {
+16 error
+16 error       at Object.<anonymous> (src/modules/user/account-services.test.ts:21:14)
+16 error       at src/modules/user/account-services.test.ts:26:71
+16 error       at Object.<anonymous>.__awaiter (src/modules/user/account-services.test.ts:6:12)
+16 error       at Object.<anonymous>.afterAll (src/modules/user/account-services.test.ts:20:21)
+16 error
+16 error FAIL src/modules/user/userResolver.test.ts
+16 error   ● Test suite failed to run
+16 error
+16 error     TypeError: Cannot read property 'close' of undefined
+16 error
+16 error       18 |
+16 error       19 | afterAll(async () => {
+16 error     > 20 |   connection.close();
+16 error          |              ^
+16 error       21 | });
+16 error       22 |
+16 error       23 | const registerInvalidData = {
+16 error
+16 error       at Object.<anonymous> (src/modules/user/userResolver.test.ts:20:14)
+16 error       at src/modules/user/userResolver.test.ts:26:71
+16 error       at Object.<anonymous>.__awaiter (src/modules/user/userResolver.test.ts:6:12)
+16 error       at Object.<anonymous>.afterAll (src/modules/user/userResolver.test.ts:19:21)
+16 error
+16 error FAIL src/modules/category/categoryResolver.test.ts
+16 error   ● category resolver › case: add category without login
+16 error
+16 error     No connection options were found in any of configurations file.
+16 error
+16 error       at ConnectionOptionsReader.<anonymous> (../../src/connection/ConnectionOptionsReader.ts:41:19)
+16 error       at step (../../node_modules/typeorm/connection/ConnectionOptionsReader.js:32:23)
+16 error       at Object.next (../../node_modules/typeorm/connection/ConnectionOptionsReader.js:13:53)
+16 error       at fulfilled (../../node_modules/typeorm/connection/ConnectionOptionsReader.js:4:58)
+16 error
+16 error   ● category resolver › case: logged in but not admin
+16 error
+16 error     No connection options were found in any of configurations file.
+16 error
+16 error       at ConnectionOptionsReader.<anonymous> (../../src/connection/ConnectionOptionsReader.ts:41:19)
+16 error       at step (../../node_modules/typeorm/connection/ConnectionOptionsReader.js:32:23)
+16 error       at Object.next (../../node_modules/typeorm/connection/ConnectionOptionsReader.js:13:53)
+16 error       at fulfilled (../../node_modules/typeorm/connection/ConnectionOptionsReader.js:4:58)
+16 error
+16 error   ● category resolver › case: addCategoryValid
+16 error
+16 error     expect(value).toMatchSnapshot()
+16 error
+16 error     Received value does not match stored snapshot "category resolver case: addCategoryValid 1".
+16 error
+16 error     - Snapshot
+16 error     + Received
+16 error
+16 error       Object {
+16 error         "data": Object {
+16 error     -     "addCategory": Object {
+16 error     -       "id": "1",
+16 error     -       "name": "Information Technology",
+16 error     -       "slug": "information-technology",
+16 error     -     },
+16 error     +     "addCategory": null,
+16 error         },
+16 error     +   "errors": Array [
+16 error     +     [GraphQLError: Cannot read property 'getRepository' of undefined],
+16 error     +   ],
+16 error       }
+16 error
+16 error       47 |       const ctx = { session, db: connection };
+16 error       48 |       const result = await graphql(genSchema(), query, null, ctx, {});
+16 error     > 49 |       expect(result).toMatchSnapshot();
+16 error          |                      ^
+16 error       50 |     });
+16 error       51 |   });
+16 error       52 | });
+16 error
+16 error       at Object.<anonymous> (src/modules/category/categoryResolver.test.ts:49:22)
+16 error       at fulfilled (src/modules/category/categoryResolver.test.ts:9:32)
+16 error
+16 error   ● category resolver › case: add category with parent
+16 error
+16 error     expect(value).toMatchSnapshot()
+16 error
+16 error     Received value does not match stored snapshot "category resolver case: add category with parent 1".
+16 error
+16 error     - Snapshot
+16 error     + Received
+16 error
+16 error       Object {
+16 error         "data": Object {
+16 error     -     "addCategory": Object {
+16 error     -       "id": "2",
+16 error     -       "name": "Child",
+16 error     -       "slug": "child",
+16 error     -     },
+16 error     +     "addCategory": null,
+16 error         },
+16 error     +   "errors": Array [
+16 error     +     [GraphQLError: Cannot read property 'getRepository' of undefined],
+16 error     +   ],
+16 error       }
+16 error
+16 error       47 |       const ctx = { session, db: connection };
+16 error       48 |       const result = await graphql(genSchema(), query, null, ctx, {});
+16 error     > 49 |       expect(result).toMatchSnapshot();
+16 error          |                      ^
+16 error       50 |     });
+16 error       51 |   });
+16 error       52 | });
+16 error
+16 error       at Object.<anonymous> (src/modules/category/categoryResolver.test.ts:49:22)
+16 error       at fulfilled (src/modules/category/categoryResolver.test.ts:9:32)
+16 error
+16 error   ● category resolver › case: add category with invalid parent
+16 error
+16 error     expect(value).toMatchSnapshot()
+16 error
+16 error     Received value does not match stored snapshot "category resolver case: add category with invalid parent 1".
+16 error
+16 error     - Snapshot
+16 error     + Received
+16 error
+16 error       Object {
+16 error         "data": Object {
+16 error           "addCategory": null,
+16 error         },
+16 error         "errors": Array [
+16 error     -     [GraphQLError: Invalid parent],
+16 error     +     [GraphQLError: Cannot read property 'getRepository' of undefined],
+16 error         ],
+16 error       }
+16 error
+16 error       47 |       const ctx = { session, db: connection };
+16 error       48 |       const result = await graphql(genSchema(), query, null, ctx, {});
+16 error     > 49 |       expect(result).toMatchSnapshot();
+16 error          |                      ^
+16 error       50 |     });
+16 error       51 |   });
+16 error       52 | });
+16 error
+16 error       at Object.<anonymous> (src/modules/category/categoryResolver.test.ts:49:22)
+16 error       at fulfilled (src/modules/category/categoryResolver.test.ts:9:32)
+16 error
+16 error   ● category resolver › case: listMainCategories
+16 error
+16 error     expect(value).toMatchSnapshot()
+16 error
+16 error     Received value does not match stored snapshot "category resolver case: listMainCategories 1".
+16 error
+16 error     - Snapshot
+16 error     + Received
+16 error
+16 error       Object {
+16 error         "data": Object {
+16 error     -     "listMainCategories": Array [
+16 error     -       Object {
+16 error     -         "slug": "information-technology",
+16 error     -       },
+16 error     -     ],
+16 error     +     "listMainCategories": null,
+16 error         },
+16 error     +   "errors": Array [
+16 error     +     [GraphQLError: Cannot read property 'getTreeRepository' of undefined],
+16 error     +   ],
+16 error       }
+16 error
+16 error       47 |       const ctx = { session, db: connection };
+16 error       48 |       const result = await graphql(genSchema(), query, null, ctx, {});
+16 error     > 49 |       expect(result).toMatchSnapshot();
+16 error          |                      ^
+16 error       50 |     });
+16 error       51 |   });
+16 error       52 | });
+16 error
+16 error       at Object.<anonymous> (src/modules/category/categoryResolver.test.ts:49:22)
+16 error       at fulfilled (src/modules/category/categoryResolver.test.ts:9:32)
+16 error
+16 error   ● category resolver › case: getCategoryById
+16 error
+16 error     expect(value).toMatchSnapshot()
+16 error
+16 error     Received value does not match stored snapshot "category resolver case: getCategoryById 1".
+16 error
+16 error     - Snapshot
+16 error     + Received
+16 error
+16 error       Object {
+16 error         "data": Object {
+16 error     -     "getCategoryById": Object {
+16 error     -       "slug": "information-technology",
+16 error     -     },
+16 error     +     "getCategoryById": null,
+16 error         },
+16 error     +   "errors": Array [
+16 error     +     [GraphQLError: Cannot read property 'getRepository' of undefined],
+16 error     +   ],
+16 error       }
+16 error
+16 error       47 |       const ctx = { session, db: connection };
+16 error       48 |       const result = await graphql(genSchema(), query, null, ctx, {});
+16 error     > 49 |       expect(result).toMatchSnapshot();
+16 error          |                      ^
+16 error       50 |     });
+16 error       51 |   });
+16 error       52 | });
+16 error
+16 error       at Object.<anonymous> (src/modules/category/categoryResolver.test.ts:49:22)
+16 error       at fulfilled (src/modules/category/categoryResolver.test.ts:9:32)
+16 error
+16 error   ● category resolver › case: getBreadCrumbPath
+16 error
+16 error     expect(value).toMatchSnapshot()
+16 error
+16 error     Received value does not match stored snapshot "category resolver case: getBreadCrumbPath 1".
+16 error
+16 error     - Snapshot
+16 error     + Received
+16 error
+16 error       Object {
+16 error         "data": Object {
+16 error     -     "getBreadCrumbPath": Object {
+16 error     -       "parent": Object {
+16 error     -         "slug": "information-technology",
+16 error     -       },
+16 error     -       "slug": "child",
+16 error     -     },
+16 error     +     "getBreadCrumbPath": null,
+16 error         },
+16 error     +   "errors": Array [
+16 error     +     [GraphQLError: Cannot read property 'getRepository' of undefined],
+16 error     +   ],
+16 error       }
+16 error
+16 error       47 |       const ctx = { session, db: connection };
+16 error       48 |       const result = await graphql(genSchema(), query, null, ctx, {});
+16 error     > 49 |       expect(result).toMatchSnapshot();
+16 error          |                      ^
+16 error       50 |     });
+16 error       51 |   });
+16 error       52 | });
+16 error
+16 error       at Object.<anonymous> (src/modules/category/categoryResolver.test.ts:49:22)
+16 error       at fulfilled (src/modules/category/categoryResolver.test.ts:9:32)
+16 error
+16 error   ● category resolver › case: getBreadCrumbPath2
+16 error
+16 error     expect(value).toMatchSnapshot()
+16 error
+16 error     Received value does not match stored snapshot "category resolver case: getBreadCrumbPath2 1".
+16 error
+16 error     - Snapshot
+16 error     + Received
+16 error
+16 error       Object {
+16 error         "data": Object {
+16 error           "getBreadCrumbPath": null,
+16 error         },
+16 error         "errors": Array [
+16 error     -     [GraphQLError: Invalid Category],
+16 error     +     [GraphQLError: Cannot read property 'getRepository' of undefined],
+16 error         ],
+16 error       }
+16 error
+16 error       47 |       const ctx = { session, db: connection };
+16 error       48 |       const result = await graphql(genSchema(), query, null, ctx, {});
+16 error     > 49 |       expect(result).toMatchSnapshot();
+16 error          |                      ^
+16 error       50 |     });
+16 error       51 |   });
+16 error       52 | });
+16 error
+16 error       at Object.<anonymous> (src/modules/category/categoryResolver.test.ts:49:22)
+16 error       at fulfilled (src/modules/category/categoryResolver.test.ts:9:32)
+16 error
+16 error   ● category resolver › case: getChildCategories
+16 error
+16 error     expect(value).toMatchSnapshot()
+16 error
+16 error     Received value does not match stored snapshot "category resolver case: getChildCategories 1".
+16 error
+16 error     - Snapshot
+16 error     + Received
+16 error
+16 error       Object {
+16 error         "data": Object {
+16 error     -     "getChildCategories": Object {
+16 error     -       "children": Array [
+16 error     -         Object {
+16 error     -           "slug": "child",
+16 error     -         },
+16 error     -       ],
+16 error     -       "slug": "information-technology",
+16 error     -     },
+16 error     +     "getChildCategories": null,
+16 error         },
+16 error     +   "errors": Array [
+16 error     +     [GraphQLError: Cannot read property 'getRepository' of undefined],
+16 error     +   ],
+16 error       }
+16 error
+16 error       47 |       const ctx = { session, db: connection };
+16 error       48 |       const result = await graphql(genSchema(), query, null, ctx, {});
+16 error     > 49 |       expect(result).toMatchSnapshot();
+16 error          |                      ^
+16 error       50 |     });
+16 error       51 |   });
+16 error       52 | });
+16 error
+16 error       at Object.<anonymous> (src/modules/category/categoryResolver.test.ts:49:22)
+16 error       at fulfilled (src/modules/category/categoryResolver.test.ts:9:32)
+16 error
+16 error   ● category resolver › case: getChildCategories2
+16 error
+16 error     expect(value).toMatchSnapshot()
+16 error
+16 error     Received value does not match stored snapshot "category resolver case: getChildCategories2 1".
+16 error
+16 error     - Snapshot
+16 error     + Received
+16 error
+16 error       Object {
+16 error         "data": Object {
+16 error           "getChildCategories": null,
+16 error         },
+16 error         "errors": Array [
+16 error     -     [GraphQLError: Invalid Category],
+16 error     +     [GraphQLError: Cannot read property 'getRepository' of undefined],
+16 error         ],
+16 error       }
+16 error
+16 error       47 |       const ctx = { session, db: connection };
+16 error       48 |       const result = await graphql(genSchema(), query, null, ctx, {});
+16 error     > 49 |       expect(result).toMatchSnapshot();
+16 error          |                      ^
+16 error       50 |     });
+16 error       51 |   });
+16 error       52 | });
+16 error
+16 error       at Object.<anonymous> (src/modules/category/categoryResolver.test.ts:49:22)
+16 error       at fulfilled (src/modules/category/categoryResolver.test.ts:9:32)
+16 error
+16 error  › 9 snapshots failed.
+16 error FAIL src/modules/book/bookResolver.test.ts
+16 error   ● Test suite failed to run
+16 error
+16 error     TypeError: Cannot read property 'close' of undefined
+16 error
+16 error       22 |
+16 error       23 | afterAll(async () => {
+16 error     > 24 |   connection.close();
+16 error          |              ^
+16 error       25 | });
+16 error       26 |
+16 error       27 | describe('books resolver', () => {
+16 error
+16 error       at Object.<anonymous> (src/modules/book/bookResolver.test.ts:24:14)
+16 error       at src/modules/book/bookResolver.test.ts:26:71
+16 error       at Object.<anonymous>.__awaiter (src/modules/book/bookResolver.test.ts:6:12)
+16 error       at Object.<anonymous>.afterAll (src/modules/book/bookResolver.test.ts:23:21)
+16 error
+16 error FAIL src/modules/user/list-users.test.ts
+16 error   ● Test suite failed to run
+16 error
+16 error     TypeError: Cannot read property 'close' of undefined
+16 error
+16 error       11 |
+16 error       12 | afterAll(async () => {
+16 error     > 13 |   connection.close();
+16 error          |              ^
+16 error       14 | });
+16 error       15 |
+16 error       16 | const listUsers = {
+16 error
+16 error       at Object.<anonymous> (src/modules/user/list-users.test.ts:13:14)
+16 error       at src/modules/user/list-users.test.ts:26:71
+16 error       at Object.<anonymous>.__awaiter (src/modules/user/list-users.test.ts:6:12)
+16 error       at Object.<anonymous>.afterAll (src/modules/user/list-users.test.ts:12:21)
+16 error
+16 error PASS src/utils/user-utils.test.ts
+16 error FAIL src/start-server.test.ts
+16 error   ● start-server › should start
+16 error
+16 error     No connection options were found in any of configurations file.
+16 error
+16 error       at ConnectionOptionsReader.<anonymous> (../../src/connection/ConnectionOptionsReader.ts:41:19)
+16 error       at step (../../node_modules/typeorm/connection/ConnectionOptionsReader.js:32:23)
+16 error       at Object.next (../../node_modules/typeorm/connection/ConnectionOptionsReader.js:13:53)
+16 error       at fulfilled (../../node_modules/typeorm/connection/ConnectionOptionsReader.js:4:58)
+16 error
+16 error   ● start-server › should start
+16 error
+16 error     connect ECONNREFUSED 127.0.0.1:4001
+16 error
+16 error
+16 error
+16 error   ● start-server › confirm
+16 error
+16 error     No connection options were found in any of configurations file.
+16 error
+16 error       at ConnectionOptionsReader.<anonymous> (../../src/connection/ConnectionOptionsReader.ts:41:19)
+16 error       at step (../../node_modules/typeorm/connection/ConnectionOptionsReader.js:32:23)
+16 error       at Object.next (../../node_modules/typeorm/connection/ConnectionOptionsReader.js:13:53)
+16 error       at fulfilled (../../node_modules/typeorm/connection/ConnectionOptionsReader.js:4:58)
+16 error
+16 error   ● start-server › confirm
+16 error
+16 error     connect ECONNREFUSED 127.0.0.1:4001
+16 error
+16 error
+16 error
+16 error   ● start-server › reset
+16 error
+16 error     No connection options were found in any of configurations file.
+16 error
+16 error       at ConnectionOptionsReader.<anonymous> (../../src/connection/ConnectionOptionsReader.ts:41:19)
+16 error       at step (../../node_modules/typeorm/connection/ConnectionOptionsReader.js:32:23)
+16 error       at Object.next (../../node_modules/typeorm/connection/ConnectionOptionsReader.js:13:53)
+16 error       at fulfilled (../../node_modules/typeorm/connection/ConnectionOptionsReader.js:4:58)
+16 error
+16 error   ● start-server › reset
+16 error
+16 error     connect ECONNREFUSED 127.0.0.1:4001
+16 error
+16 error
+16 error
+16 error PASS src/emails/emails.test.ts
+16 error PASS src/schema.test.ts
+16 error PASS src/utils/utils.test.ts
+16 error
+16 error Snapshot Summary
+16 error  › 9 snapshots failed from 1 test suite. Inspect your code changes or run `yarn test -u` to update them.
+16 error
+16 error Test Suites: 7 failed, 4 passed, 11 total
+16 error Tests:       14 failed, 5 passed, 19 total
+16 error Snapshots:   9 failed, 3 passed, 12 total
+16 error Time:        10.512s
+16 error Ran all test suites.
+16 error npm ERR! code ELIFECYCLE
+16 error npm ERR! errno 1
+16 error npm ERR! @b2bconnect/server@1.0.0 test: `jest --runInBand --forceExit --detectOpenHandles`
+16 error npm ERR! Exit status 1
+16 error npm ERR!
+16 error npm ERR! Failed at the @b2bconnect/server@1.0.0 test script.
+16 error npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+16 error
+16 error npm ERR! A complete log of this run can be found in:
+16 error npm ERR!     /Users/dhaya/.npm/_logs/2018-09-21T16_40_38_929Z-debug.log
+16 error
+16 error > @b2bconnect/server@1.0.0 test /Users/dhaya/work/dhayaec/b2bconnect/packages/server
+16 error > jest --runInBand --forceExit --detectOpenHandles
+16 error
+16 error -------------------------|----------|----------|----------|----------|-------------------|
+16 error File                     |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
+16 error -------------------------|----------|----------|----------|----------|-------------------|
+16 error All files                |    50.69 |    22.98 |    28.18 |    50.72 |                   |
+16 error  src                     |    63.46 |    35.71 |    42.86 |    64.71 |                   |
+16 error   constants.ts           |      100 |      100 |      100 |      100 |                   |
+16 error   start-server.ts        |    53.66 |       10 |       20 |       55 |... 88,90,92,95,99 |
+16 error  src/emails              |       92 |    33.33 |       75 |      100 |                   |
+16 error   emails.ts              |       92 |    33.33 |       75 |      100 |     44,45,104,105 |
+16 error  src/entity              |    88.37 |    66.67 |        0 |    89.47 |                   |
+16 error   Book.ts                |    85.19 |    66.67 |        0 |     87.5 |          66,71,72 |
+16 error   Cart.ts                |     87.5 |    66.67 |        0 |    85.71 |             19,22 |
+16 error   Category.ts            |       85 |    66.67 |        0 |    88.24 |             52,57 |
+16 error   User.ts                |    95.24 |    66.67 |        0 |    94.74 |                63 |
+16 error   bookSchema.ts          |      100 |      100 |      100 |      100 |                   |
+16 error  src/modules             |       50 |      100 |      100 |       50 |                   |
+16 error   data.ts                |        0 |      100 |      100 |        0 |              1,17 |
+16 error   validation-rules.ts    |      100 |      100 |      100 |      100 |                   |
+16 error  src/modules/book        |    21.21 |        0 |        0 |    21.21 |                   |
+16 error   book-test-cases.ts     |        0 |      100 |      100 |        0 |... 35,60,71,81,91 |
+16 error   book.resolver.ts       |       28 |        0 |        0 |       28 |... 56,58,59,62,74 |
+16 error  src/modules/cart        |    10.42 |        0 |        0 |    10.64 |                   |
+16 error   cart.resolver.ts       |    10.42 |        0 |        0 |    10.64 |... 12,113,116,117 |
+16 error  src/modules/category    |    76.92 |       25 |      100 |    76.92 |                   |
+16 error   category-test-cases.ts |      100 |      100 |      100 |      100 |                   |
+16 error   category.resolver.ts   |    65.38 |       25 |      100 |    65.38 |... 38,40,54,55,63 |
+16 error  src/modules/user        |    28.08 |        0 |        0 |    28.28 |                   |
+16 error   account-services.ts    |    16.67 |        0 |        0 |    16.67 |... 61,164,166,169 |
+16 error   get-user.ts            |       50 |      100 |        0 |       50 |               8,9 |
+16 error   list-users.ts          |       50 |        0 |        0 |       50 |       10,11,13,15 |
+16 error   login.ts               |       25 |        0 |        0 |       25 |... 25,26,28,29,32 |
+16 error   logout.ts              |       20 |        0 |        0 |    22.22 |   5,6,7,8,9,10,14 |
+16 error   me.ts                  |       75 |      100 |        0 |       75 |                 8 |
+16 error   register.ts            |    23.08 |        0 |        0 |    23.08 |... 57,58,59,61,79 |
+16 error   user.resolver.ts       |      100 |      100 |      100 |      100 |                   |
+16 error  src/utils               |    52.35 |    23.53 |    32.43 |    53.57 |                   |
+16 error   connect-db.ts          |       50 |        0 |        0 |       60 |       10,12,19,21 |
+16 error   create-db.ts           |    26.67 |        0 |    33.33 |    26.67 |... 23,25,27,28,29 |
+16 error   errors.ts              |      100 |      100 |      100 |      100 |                   |
+16 error   schema-utils.ts        |      100 |      100 |      100 |      100 |                   |
+16 error   user-utils.ts          |       34 |        0 |    18.75 |    35.42 |... 6,97,98,99,101 |
+16 error   utils.ts               |    52.27 |       50 |    45.45 |     52.5 |... 01,102,104,105 |
+16 error -------------------------|----------|----------|----------|----------|-------------------|
+16 error
+16 error     at Promise.all.then.arr (/Users/dhaya/work/dhayaec/b2bconnect/node_modules/lerna/node_modules/execa/index.js:236:11)
+16 error     at <anonymous>
