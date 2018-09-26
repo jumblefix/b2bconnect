@@ -22,17 +22,17 @@ column: number;
 
 interface IQuery {
 __typename: "Query";
-listBooks: Array<IBookResponse> | null;
+listBooks: Array<IBookResponse | null> | null;
 getBook: IBookResponse | null;
-getBookByCategory: Array<IBookResponse> | null;
-getCart: Array<ICartResponse> | null;
-listMainCategories: Array<ICategoryResponse> | null;
+getBookByCategory: Array<IBookResponse | null> | null;
+getCart: Array<ICartResponse | null> | null;
+listMainCategories: Array<ICategoryResponse | null> | null;
 getChildCategories: INestedChildren | null;
 getBreadCrumbPath: IBreadCrumb | null;
 getCategoryById: ICategoryResponse | null;
 me: IUserResponse | null;
 getUser: IUserResponse | null;
-listUsers: Array<IUserResponse> | null;
+listUsers: Array<IUserResponse | null> | null;
 }
 
 interface IListBooksOnQueryArguments {
@@ -112,7 +112,7 @@ __typename: "NestedChildren";
 id: string | null;
 name: string | null;
 slug: string | null;
-children: Array<INestedChildren> | null;
+children: Array<INestedChildren | null> | null;
 }
 
 interface IBreadCrumb {

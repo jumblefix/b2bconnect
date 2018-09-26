@@ -1,3 +1,4 @@
+import { Connection } from 'typeorm';
 // tslint:disable-next-line:no-var-requires
 require('dotenv-safe').config();
 import * as connectRedis from 'connect-redis';
@@ -28,7 +29,13 @@ export async function startServer() {
 
   await createDb();
 
-  const connection = await connectDb();
+  let connection: Connection;
+
+  try {
+    connection = await connectDb();
+  } catch (error) {
+    throw new Error(error);
+  }
 
   if (process.env.NODE_ENV === Env.production) {
     await connection.runMigrations();
