@@ -1,4 +1,4 @@
-import { addAll, factorial, isPalindrome, reverse } from './index';
+import { addAll, factorial, isPalindrome, percentage, reverse } from './index';
 
 describe('common', () => {
   describe('addAll', () => {
@@ -20,6 +20,12 @@ describe('common', () => {
     it('check for palindrome', () => {
       expect(isPalindrome('level')).toBeTruthy();
       expect(isPalindrome('car')).toBeFalsy();
+    });
+  });
+  describe('percentage', () => {
+    it('show give percentage', () => {
+      expect(percentage(1, 5)).toEqual(20);
+      expect(percentage(30, 200)).toEqual(15);
     });
   });
 });
