@@ -15,6 +15,7 @@
   "prettier.trailingComma": "all",
   "cSpell.words": [
     "Dhayanandhan",
+    "Truthy",
     "Workspaces",
     "antialiased",
     "bconnect",
@@ -38,6 +39,7 @@
     "nbsp",
     "nohoist",
     "ormconfig",
+    "precommit",
     "preheader",
     "proviced",
     "repo",
@@ -45,8 +47,7 @@
     "rspace",
     "slugify",
     "typeorm",
-    "varchar",
-    "precommit"
+    "varchar"
   ],
   "editor.emptySelectionClipboard": false
 }

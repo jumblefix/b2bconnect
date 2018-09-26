@@ -9,3 +9,5 @@ export const reverse = (str: string) =>
 
 export const factorial = (num: number): number =>
   num === 0 ? 1 : num * factorial(num - 1);
+
+export const isPalindrome = (str: string) => str === reverse(str);

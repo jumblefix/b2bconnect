@@ -1,4 +1,4 @@
-import { addAll, factorial, reverse } from './';
+import { addAll, factorial, isPalindrome, reverse } from './index';
 
 describe('common', () => {
   describe('addAll', () => {
@@ -14,6 +14,12 @@ describe('common', () => {
   describe('factorial', () => {
     it('factorial the number passed', () => {
       expect(factorial(5)).toEqual(120);
+    });
+  });
+  describe('isPalindrome', () => {
+    it('check for palindrome', () => {
+      expect(isPalindrome('level')).toBeTruthy();
+      expect(isPalindrome('car')).toBeFalsy();
     });
   });
 });
