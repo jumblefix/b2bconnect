@@ -1,25 +1,26 @@
 {
-  "name": "web",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "react-scripts-ts": "2.17.0",
-    "reakit": "^0.15.3",
-    "reakit-theme-default": "^0.1.4"
-  },
+  "name": "@b2bconnect/web",
+  "version": "1.0.0",
   "scripts": {
-    "start": "react-scripts-ts start",
-    "build": "react-scripts-ts build",
-    "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject"
+    "dev": "nodemon server/index.ts",
+    "build": "next build && tsc --project tsconfig.server.json",
+    "start": "NODE_ENV=production node .next/production-server/index.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.0.0-rc.1",
+    "@zeit/next-typescript": "1.1.0",
+    "babel-loader": "^7.1.4",
+    "next": "^7.0.1",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "typescript": "latest",
+    "typescript-babel-jest": "^1.0.5"
   },
   "devDependencies": {
-    "@types/jest": "^23.3.2",
-    "@types/node": "^10.11.2",
-    "@types/react": "^16.4.14",
-    "@types/react-dom": "^16.0.8",
-    "typescript": "^3.1.1"
-  }
+    "@types/next": "^2.4.11",
+    "@types/react": "^16.0.36",
+    "nodemon": "^1.17.5",
+    "ts-node": "^4.1.0"
+  },
+  "license": "MIT"
 }
