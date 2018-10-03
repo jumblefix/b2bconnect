@@ -3,17 +3,14 @@
     [
       "babel-plugin-styled-components",
       {
-        "displayName": true
+        "displayName": true,
+        "fileName": false
       }
     ]
   ],
   "env": {
     "development": {
-      "presets": [
-        "@babel/preset-typescript",
-        "next/babel",
-        "@zeit/next-typescript/babel"
-      ]
+      "presets": ["next/babel", "@zeit/next-typescript/babel"]
     },
     "production": {
       "presets": [
@@ -24,11 +21,7 @@
     },
     "test": {
       "presets": [
-        [
-          "@babel/preset-typescript",
-          "next/babel",
-          { "preset-env": { "modules": "commonjs" } }
-        ],
+        ["next/babel", { "preset-env": { "modules": "commonjs" } }],
         "@zeit/next-typescript/babel"
       ]
     }
