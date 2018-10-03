@@ -4,7 +4,6 @@
   "git.enableSmartCommit": true,
   "files.exclude": {
     "**/node_modules/": true,
-    "yarn.lock": true,
     "package-lock.json": true
   },
   "git.autofetch": true,
@@ -49,7 +48,8 @@
     "rspace",
     "slugify",
     "typeorm",
-    "varchar"
+    "varchar",
+    "zeit"
   ],
   "editor.emptySelectionClipboard": false
 }
