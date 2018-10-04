@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.section`
@@ -7,26 +7,25 @@ const Wrapper = styled.section`
   background: papayawhip;
 `;
 
-const Button = styled.button`
-  color: red;
-`;
-
-export default () => (
-  <div>
-    <Wrapper>
-      <ul>
-        <li>
-          <Link href="/a" as="/a">
-            <a>a</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/b" as="/b">
-            <a>b</a>
-          </Link>
-        </li>
-      </ul>
-    </Wrapper>
-    <Button>Button</Button>
-  </div>
-);
+export default class Home extends Component {
+  render() {
+    return (
+      <div>
+        <Wrapper>
+          <ul>
+            <li>
+              <Link href="/contact" as="/contact">
+                <a>Contact Us</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/about" as="/about">
+                <a>About</a>
+              </Link>
+            </li>
+          </ul>
+        </Wrapper>
+      </div>
+    );
+  }
+}

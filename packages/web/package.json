@@ -8,18 +8,17 @@
     "test": "jest"
   },
   "dependencies": {
-    "@babel/core": "^7.0.0-rc.1",
-    "@zeit/next-typescript": "1.1.0",
-    "babel-loader": "^7.1.4",
     "fastify": "^1.12.1",
     "next": "^7.0.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
-    "styled-components": "^4.0.0-beta.9",
-    "typescript": "latest",
-    "typescript-babel-jest": "^1.0.5"
+    "styled-components": "^4.0.0-beta.9"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0-rc.1",
+    "typescript": "latest",
+    "typescript-babel-jest": "^1.0.5",
+    "babel-loader": "^7.1.4",
     "@babel/preset-typescript": "^7.1.0",
     "@types/jest": "^23.0.0",
     "@types/next": "^2.4.11",
