@@ -13,11 +13,7 @@
       "presets": ["next/babel", "@zeit/next-typescript/babel"]
     },
     "production": {
-      "presets": [
-        "@babel/preset-typescript",
-        "next/babel",
-        "@zeit/next-typescript/babel"
-      ]
+      "presets": ["next/babel", "@zeit/next-typescript/babel"]
     },
     "test": {
       "presets": [
