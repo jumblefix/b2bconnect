@@ -1,11 +1,6 @@
 import Link from 'next/link';
 import React, { Component } from 'react';
-import styled from 'styled-components';
-
-const Wrapper = styled.section`
-  padding: 4em;
-  background: papayawhip;
-`;
+import Wrapper from '../components/Wrapper/Wrapper';
 
 export default class Home extends Component {
   render() {
