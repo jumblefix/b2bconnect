@@ -5,7 +5,10 @@
     "dev": "nodemon server/index.ts",
     "build": "next build && tsc --project tsconfig.server.json",
     "start": "NODE_ENV=production node .next/production-server/index.js",
-    "test": "jest"
+    "test": "jest",
+    "analyze": "BUNDLE_ANALYZE=both next build",
+    "analyze:server": "BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "BUNDLE_ANALYZE=browser next build"
   },
   "dependencies": {
     "fastify": "^1.12.1",
@@ -21,6 +24,7 @@
     "@types/react": "^16.0.36",
     "@types/react-dom": "^16.0.8",
     "@types/styled-components": "^3.0.1",
+    "@zeit/next-bundle-analyzer": "^0.1.2",
     "@zeit/next-typescript": "1.1.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "23.0.1",
