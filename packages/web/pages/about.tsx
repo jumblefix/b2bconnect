@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Title, SubTitle, Paragraph } from '../components/Text/Text';
+import { Button } from 'reakit';
+import { Paragraph, SubTitle, Title } from '../components/Text/Text';
 
 export default class About extends Component {
   render() {
@@ -9,6 +10,7 @@ export default class About extends Component {
         <SubTitle>This is an about us page.</SubTitle>
         <Paragraph>Welcome to the about us page.</Paragraph>
         <Paragraph>This is an example using styled component</Paragraph>
+        <Button>Button</Button>
       </div>
     );
   }
