@@ -51,5 +51,6 @@
     "varchar",
     "zeit"
   ],
-  "editor.emptySelectionClipboard": false
+  "editor.emptySelectionClipboard": false,
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

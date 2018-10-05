@@ -1,35 +1,29 @@
-import { createServer } from 'http';
+import * as express from 'express';
 import * as next from 'next';
-import { parse } from 'url';
-const { join } = require('path');
+import { sitemapAndRobots } from './sitemapRobots';
 
-const port = parseInt(process.env.PORT as string, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
+const port = process.env.PORT || 3000;
+const ROOT_URL = dev
+  ? `http://localhost:${port}`
+  : 'https://sitemap-robots-typescript.now.sh';
+
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
 app.prepare().then(() => {
-  createServer((req, res) => {
-    const url: any = req.url;
-    const parsedUrl = parse(url, true);
-    const { pathname, query } = parsedUrl;
+  const server = express();
 
-    const rootStaticFiles = ['/robots.txt', '/sitemap.xml', '/favicon.ico'];
+  sitemapAndRobots({ server });
 
-    if (rootStaticFiles.indexOf(pathname || '') > -1) {
-      const path = join(__dirname, 'static', pathname);
-      app.serveStatic(req, res, path);
-    } else if (pathname === '/a') {
-      app.render(req, res, '/a', query);
-    } else if (pathname === '/b') {
-      app.render(req, res, '/b', query);
-    } else {
-      handle(req, res, parsedUrl);
-    }
-  }).listen(port, (err: any) => {
+  server.get('*', (req, res) => {
+    handle(req, res);
+  });
+
+  server.listen(port, (err: any) => {
     if (err) {
       throw err;
     }
-    console.log(`> Ready on http://localhost:${port}`);
+    console.log(`> Ready on ${ROOT_URL}`);
   });
 });
