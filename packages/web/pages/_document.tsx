@@ -1,5 +1,5 @@
-import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
+import React from 'react';
 
 const config = {
   SITE_NAME: 'My Website',
