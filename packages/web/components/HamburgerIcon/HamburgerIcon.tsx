@@ -1,9 +1,14 @@
-import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
 import { css, styled } from 'reakit';
 
 interface BarProps {
   open: boolean;
   position: number;
+}
+
+interface HamburgerIconProps {
+  open: boolean;
 }
 
 const BarContainer = styled.div`
@@ -39,20 +44,15 @@ const Bar = styled.div<BarProps>`
     `};
 `;
 
-export default class HamburgerIcon extends Component {
-  state = {
-    open: false,
+export default class HamburgerIcon extends PureComponent<HamburgerIconProps> {
+  static propTypes = {
+    open: PropTypes.bool.isRequired,
   };
 
-  toggle = (e: any) => {
-    e.preventDefault();
-    this.setState({ open: !this.state.open });
-  }
-
   render() {
-    const { open } = this.state;
+    const { open } = this.props;
     return (
-      <BarContainer onClick={this.toggle}>
+      <BarContainer>
         <Bar open={open} position={1} />
         <Bar open={open} position={2} />
         <Bar open={open} position={3} />

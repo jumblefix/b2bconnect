@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { styled } from 'reakit';
+import HamburgerIcon from '../HamburgerIcon/HamburgerIcon';
 
 const Nav = styled.div`
   overflow: hidden;
@@ -25,8 +26,8 @@ const NavIcon = styled.i`
 `;
 
 export default class NavMenu extends Component {
-  state: {
-    open: false;
+  state = {
+    open: false,
   };
 
   toggle = (e: any) => {
@@ -35,6 +36,7 @@ export default class NavMenu extends Component {
   }
 
   render() {
+    const { open } = this.state;
     return (
       <Nav>
         <NavLink href="#home" className="active">
@@ -44,7 +46,7 @@ export default class NavMenu extends Component {
         <NavLink href="#contact">Contact</NavLink>
         <NavLink href="#about">About</NavLink>
         <NavLink className="icon" onClick={this.toggle}>
-          <NavIcon className="fa fa-bars" />
+          <HamburgerIcon open={open} />
         </NavLink>
       </Nav>
     );
