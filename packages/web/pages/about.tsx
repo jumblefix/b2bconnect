@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { Button } from 'reakit';
+import HamburgerIcon from '../components/HamburgerIcon/HamburgerIcon';
+import NavMenu from '../components/NavMenu/NavMenu';
 import { Paragraph, SubTitle, Title } from '../components/Text/Text';
 
 export default class About extends Component {
   render() {
     return (
       <div>
+        <NavMenu />
+        <HamburgerIcon />
         <Title>About Us</Title>
         <SubTitle>This is an about us page.</SubTitle>
         <Paragraph>Welcome to the about us page.</Paragraph>
