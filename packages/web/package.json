@@ -9,7 +9,8 @@
     "analyze": "BUNDLE_ANALYZE=both next build",
     "analyze:server": "BUNDLE_ANALYZE=server next build",
     "analyze:browser": "BUNDLE_ANALYZE=browser next build",
-    "debug": "ndb nodemon server/index.ts"
+    "debug": "ndb nodemon server/index.ts",
+    "export": "next build && next export"
   },
   "dependencies": {
     "express": "^4.16.3",

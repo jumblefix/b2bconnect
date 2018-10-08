@@ -19,7 +19,7 @@ const BarContainer = styled.div`
 const Bar = styled.div<BarProps>`
   width: 35px;
   height: 5px;
-  background-color: #333;
+  background-color: #fff;
   margin: 6px 0;
   transition: 0.4s;
   ${({ open, position }) =>
